@@ -1,7 +1,12 @@
+using ECommerceApi.Api.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<ECommerceDbContext>(options => 
+    options.UseNpgsql(builder.Configuration.GetConnectionString("EcommerceDb")));
 
 var app = builder.Build();
 
