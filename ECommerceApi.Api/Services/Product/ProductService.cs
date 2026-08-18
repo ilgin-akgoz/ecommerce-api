@@ -3,6 +3,7 @@ using ECommerceApi.Api.Data;
 using ECommerceApi.Api.Dtos;
 using ECommerceApi.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using ECommerceApi.Api.Exceptions;
 
 namespace ECommerceApi.Api.Services;
 
@@ -45,7 +46,7 @@ public class ProductService : IProductService
     {
         var categoryExists = await _db.Categories.AnyAsync(c => c.Id == dto.CategoryId);
         if (!categoryExists)
-            throw new InvalidOperationException($"Category {dto.CategoryId} does not exist.");
+            throw new NotFoundException($"Category {dto.CategoryId} does not exist.");
 
         var product = _mapper.Map<Product>(dto);
         _db.Products.Add(product);
