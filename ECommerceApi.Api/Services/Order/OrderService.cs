@@ -3,6 +3,7 @@ using ECommerceApi.Api.Data;
 using ECommerceApi.Api.Dtos;
 using ECommerceApi.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using ECommerceApi.Api.Exceptions;
 
 namespace ECommerceApi.Api.Services;
 
@@ -48,11 +49,11 @@ public class OrderService : IOrderService
     public async Task<OrderDto> CreateAsync(CreateOrderDto dto)
     {
         if (dto.Items.Count == 0)
-            throw new InvalidOperationException("An order must contain at least one item.");
+            throw new BusinessRuleException("An order must contain at least one item.");
 
         var customerExists = await _db.Customers.AnyAsync(c => c.Id == dto.CustomerId);
         if (!customerExists)
-            throw new InvalidOperationException($"Customer {dto.CustomerId} does not exist.");
+            throw new NotFoundException($"Customer {dto.CustomerId} does not exist.");
 
         var order = new Order { CustomerId = dto.CustomerId };
         _db.Orders.Add(order);
@@ -60,10 +61,10 @@ public class OrderService : IOrderService
         foreach (var item in dto.Items)
         {
             var product = await _db.Products.FirstOrDefaultAsync(p => p.Id == item.ProductId)
-                ?? throw new InvalidOperationException($"Product {item.ProductId} does not exist.");
+                ?? throw new NotFoundException($"Product {item.ProductId} does not exist.");
 
             if (product.StockQuantity < item.Quantity)
-                throw new InvalidOperationException($"Insufficient stock for '{product.Name}'. Available: {product.StockQuantity}, requested: {item.Quantity}.");
+                throw new BusinessRuleException($"Insufficient stock for '{product.Name}'. Available: {product.StockQuantity}, requested: {item.Quantity}.");
             
             product.StockQuantity -= item.Quantity;
 

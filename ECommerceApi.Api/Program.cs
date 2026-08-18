@@ -4,6 +4,7 @@ using ECommerceApi.Api.Mapping;
 using ECommerceApi.Api.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using ECommerceApi.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 builder.Services.AddFluentValidationAutoValidation();
 
 var app = builder.Build();
+
+app.UseGlobalExceptionHandling();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

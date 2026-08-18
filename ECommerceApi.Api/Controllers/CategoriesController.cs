@@ -35,15 +35,6 @@ public class CategoriesController : ControllerBase
         await _service.UpdateAsync(id, dto) ? NoContent() : NotFound();
 
     [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        try
-        {
-            return await _service.DeleteAsync(id) ? NoContent() : NotFound();
-        }
-        catch (InvalidOperationException ex)
-        {
-            return Conflict(new { error = ex.Message });
-        }
-    }
+    public async Task<IActionResult> Delete(int id) => 
+        await _service.DeleteAsync(id) ? NoContent() : NotFound();
 }

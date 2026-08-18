@@ -4,6 +4,7 @@ using ECommerceApi.Api.Dtos;
 using ECommerceApi.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
+using ECommerceApi.Api.Exceptions;
 
 namespace ECommerceApi.Api.Services;
 
@@ -68,7 +69,7 @@ public class CategoryService : ICategoryService
         catch (DbUpdateException ex)
         {
             _logger.LogWarning(ex, "Failed to delete category {CategoryId} - likely still referenced by products", id);
-            throw new InvalidOperationException($"Cannot delete category {id} because it still has products assigned to it.");
+            throw new ConflictException($"Cannot delete category {id} because it still has products assigned to it.");
         }
 
         _logger.LogInformation("Delete category {CategoryId}", id);

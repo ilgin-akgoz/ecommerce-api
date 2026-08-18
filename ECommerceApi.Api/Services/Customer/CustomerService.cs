@@ -3,6 +3,7 @@ using ECommerceApi.Api.Data;
 using ECommerceApi.Api.Dtos;
 using ECommerceApi.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using ECommerceApi.Api.Exceptions;
 
 namespace ECommerceApi.Api.Services;
 
@@ -33,7 +34,7 @@ public class CustomerService : ICustomerService
     {
         var emailTaken = await _db.Customers.AnyAsync(c => c.Email == dto.Email);
         if (emailTaken)
-            throw new InvalidOperationException($"A customer with email '{dto.Email}' already exists.");
+            throw new ConflictException($"A customer with email '{dto.Email}' already exists.");
 
         var customer = _mapper.Map<Customer>(dto);
         _db.Customers.Add(customer);
