@@ -1,5 +1,6 @@
 using ECommerceApi.Api.Dtos;
 using ECommerceApi.Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerceApi.Api.Controllers;
@@ -13,10 +14,12 @@ public class OrdersController : ControllerBase
     public OrdersController(IOrderService service) => _service = service;
 
     [HttpGet]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<OrderDto>>> GetAll([FromQuery] int? customerId) =>
         Ok(await _service.GetAllAsync(customerId));
 
     [HttpGet("{id:int}")]
+    [Authorize]
     public async Task<ActionResult<OrderDto>> GetById(int id)
     {
         var order = await _service.GetByIdAsync(id);
@@ -24,6 +27,7 @@ public class OrdersController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<OrderDto>> Create(CreateOrderDto dto)
     {
         var created = await _service.CreateAsync(dto);

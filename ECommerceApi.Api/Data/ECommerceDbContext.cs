@@ -1,9 +1,11 @@
 using ECommerceApi.Api.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceApi.Api.Data;
 
-public class ECommerceDbContext : DbContext
+public class ECommerceDbContext : IdentityDbContext<ApplicationUser>
 {
     public ECommerceDbContext(DbContextOptions<ECommerceDbContext> options) : base(options)
     {
@@ -17,6 +19,8 @@ public class ECommerceDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        
+        base.OnModelCreating(modelBuilder);
 
         // Category -> Products (one-to-many)
         modelBuilder.Entity<Category>(entity =>
