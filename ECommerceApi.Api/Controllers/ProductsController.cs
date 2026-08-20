@@ -1,5 +1,6 @@
 using ECommerceApi.Api.Dtos;
 using ECommerceApi.Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerceApi.Api.Controllers;
@@ -25,6 +26,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<ProductDto>> Create(CreateProductDto dto)
     {
         var created = await _service.CreateAsync(dto);
@@ -32,10 +34,12 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Update(int id, UpdateProductDto dto) =>
         await _service.UpdateAsync(id, dto) ? NoContent() : NotFound();
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id) =>
         await _service.DeleteAsync(id) ? NoContent() : NotFound();
 }
