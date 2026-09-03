@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: ecommerce_test
+          POSTGRES_PASSWORD: testpassword
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --verbosity normal
+        env:
+          ConnectionStrings__ECommerceDb: "Host=localhost;Port=5432;Database=ecommerce_test;Username=postgres;Password=testpassword"
+          Jwt__Key: "ci-only-test-signing-key-never-used-anywhere-real-32chars"
+          Jwt__Issuer: "ECommerceApi"
+          Jwt__Audience: "ECommerceApiClients"
