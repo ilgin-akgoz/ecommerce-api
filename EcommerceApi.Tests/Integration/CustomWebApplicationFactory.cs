@@ -1,11 +1,11 @@
-using ECommerceApi.Api.Data;
+using EcommerceApi.Api.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ECommerceApi.Tests.Integration;
+namespace EcommerceApi.Tests.Integration;
 
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
@@ -14,8 +14,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         builder.UseEnvironment("Testing");
 
         builder.UseSetting("Jwt:Key", "test-only-signing-key-not-used-anywhere-real-32chars+");
-        builder.UseSetting("Jwt:Issuer", "ECommerceApi");
-        builder.UseSetting("Jwt:Audience", "ECommerceApiClients");
+        builder.UseSetting("Jwt:Issuer", "EcommerceApi");
+        builder.UseSetting("Jwt:Audience", "EcommerceApiClients");
         builder.UseSetting("Jwt:ExpiryMinutes", "60");
 
         builder.ConfigureServices(services =>

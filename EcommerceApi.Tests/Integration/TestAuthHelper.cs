@@ -4,7 +4,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ECommerceApi.Tests.Integration;
+namespace EcommerceApi.Tests.Integration;
 
 /// Generates JWTs for integration tests, matching the Jwt:* settings configured
 /// via builder.UseSetting(...) in CustomWebApplicationFactory. If those settings
@@ -12,8 +12,8 @@ namespace ECommerceApi.Tests.Integration;
 public static class TestAuthHelper
 {
     private const string TestSigningKey = "test-only-signing-key-not-used-anywhere-real-32chars+";
-    private const string TestIssuer = "ECommerceApi";
-    private const string TestAudience = "ECommerceApiClients";
+    private const string TestIssuer = "EcommerceApi";
+    private const string TestAudience = "EcommerceApiClients";
 
     
     /// Builds a signed JWT for a fake test user with the given role(s).

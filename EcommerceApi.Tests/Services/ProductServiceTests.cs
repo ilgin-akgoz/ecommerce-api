@@ -1,16 +1,16 @@
 using AutoMapper;
-using ECommerceApi.Api.Data;
-using ECommerceApi.Api.Dtos;
-using ECommerceApi.Api.Exceptions;
-using ECommerceApi.Api.Mapping;
-using ECommerceApi.Api.Models;
-using ECommerceApi.Api.Services;
+using EcommerceApi.Api.Data;
+using EcommerceApi.Api.Dtos;
+using EcommerceApi.Api.Exceptions;
+using EcommerceApi.Api.Mapping;
+using EcommerceApi.Api.Models;
+using EcommerceApi.Api.Services;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
 using Xunit;
 
-namespace ECommerceApi.Tests.Services;
+namespace EcommerceApi.Tests.Services;
 
 public class ProductServiceTests
 {
