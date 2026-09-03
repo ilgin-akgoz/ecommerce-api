@@ -1,6 +1,6 @@
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Models;
 
-namespace ECommerceApi.Api.Services;
+namespace EcommerceApi.Api.Services;
 
 public interface ITokenService
 {

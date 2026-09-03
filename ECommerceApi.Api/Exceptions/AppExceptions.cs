@@ -1,4 +1,4 @@
-namespace ECommerceApi.Api.Exceptions;
+namespace EcommerceApi.Api.Exceptions;
 
 // 404
 public class NotFoundException : Exception

@@ -1,7 +1,7 @@
-using ECommerceApi.Api.Dtos;
+using EcommerceApi.Api.Dtos;
 using FluentValidation;
 
-namespace ECommerceApi.Api.Validators;
+namespace EcommerceApi.Api.Validators;
 
 public class CreateCategoryDtoValidator : AbstractValidator<CreateCategoryDto>
 {

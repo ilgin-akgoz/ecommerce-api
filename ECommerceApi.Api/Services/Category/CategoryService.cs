@@ -1,12 +1,12 @@
 using AutoMapper;
-using ECommerceApi.Api.Data;
-using ECommerceApi.Api.Dtos;
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Data;
+using EcommerceApi.Api.Dtos;
+using EcommerceApi.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging.Abstractions;
-using ECommerceApi.Api.Exceptions;
+using EcommerceApi.Api.Exceptions;
 
-namespace ECommerceApi.Api.Services;
+namespace EcommerceApi.Api.Services;
 
 public class CategoryService : ICategoryService
 {

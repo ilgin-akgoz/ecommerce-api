@@ -1,6 +1,6 @@
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Models;
 
-namespace ECommerceApi.Api.Dtos;
+namespace EcommerceApi.Api.Dtos;
 
 public record OrderItemDto
 {

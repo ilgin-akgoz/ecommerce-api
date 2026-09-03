@@ -1,8 +1,8 @@
 using AutoMapper;
-using ECommerceApi.Api.Dtos;
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Dtos;
+using EcommerceApi.Api.Models;
 
-namespace ECommerceApi.Api.Mapping;
+namespace EcommerceApi.Api.Mapping;
 
 public class MappingProfile : Profile
 {

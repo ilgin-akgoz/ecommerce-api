@@ -1,4 +1,4 @@
-namespace ECommerceApi.Api.Dtos;
+namespace EcommerceApi.Api.Dtos;
 
 public record ProductDto
 {

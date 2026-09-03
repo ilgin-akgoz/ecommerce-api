@@ -1,8 +1,8 @@
 using System.Data;
-using ECommerceApi.Api.Dtos;
+using EcommerceApi.Api.Dtos;
 using FluentValidation;
 
-namespace ECommerceApi.Api.Validators;
+namespace EcommerceApi.Api.Validators;
 
 public class CreateOrderItemDtoValidator : AbstractValidator<CreateOrderItemDto>
 {

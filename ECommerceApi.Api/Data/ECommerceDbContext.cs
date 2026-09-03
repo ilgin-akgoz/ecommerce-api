@@ -1,9 +1,9 @@
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace ECommerceApi.Api.Data;
+namespace EcommerceApi.Api.Data;
 
 public class ECommerceDbContext : IdentityDbContext<ApplicationUser>
 {

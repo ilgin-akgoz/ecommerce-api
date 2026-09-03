@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ECommerceApi.Api.Migrations
+namespace EcommerceApi.Api.Migrations
 {
     /// <inheritdoc />
     public partial class LinkCustomerToUser : Migration

@@ -1,10 +1,10 @@
 using System.Net;
 using System.Net.Http.Json;
-using ECommerceApi.Api.Dtos;
+using EcommerceApi.Api.Dtos;
 using FluentAssertions;
 using Xunit;
 
-namespace ECommerceApi.Tests.Integration;
+namespace EcommerceApi.Tests.Integration;
 
 public class CategoriesEndpointsTests : IClassFixture<CustomWebApplicationFactory>
 {

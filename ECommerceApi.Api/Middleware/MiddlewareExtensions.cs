@@ -1,4 +1,4 @@
-namespace ECommerceApi.Api.Middleware;
+namespace EcommerceApi.Api.Middleware;
 
 public static class MiddlewareExtensions
 {

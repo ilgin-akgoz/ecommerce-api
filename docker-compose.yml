@@ -18,7 +18,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: ECommerceApi.Api/Dockerfile
+      dockerfile: EcommerceApi.Api/Dockerfile
     container_name: ecommerce-api
     depends_on:
       postgres:
@@ -27,8 +27,8 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__ECommerceDb: "Host=postgres;Port=5432;Database=ecommerce;Username=postgres;Password=${POSTGRES_PASSWORD:-devpassword}"
       Jwt__Key: ${JWT_KEY}
-      Jwt__Issuer: "ECommerceApi"
-      Jwt__Audience: "ECommerceApiClients"
+      Jwt__Issuer: "EcommerceApi"
+      Jwt__Audience: "EcommerceApiClients"
       Jwt__ExpiryMinutes: "60"
     ports:
       - "5080:8080"

@@ -1,11 +1,11 @@
-using ECommerceApi.Api.Data;
+using EcommerceApi.Api.Data;
 using Microsoft.EntityFrameworkCore;
-using ECommerceApi.Api.Mapping;
-using ECommerceApi.Api.Services;
+using EcommerceApi.Api.Mapping;
+using EcommerceApi.Api.Services;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using ECommerceApi.Api.Middleware;
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Middleware;
+using EcommerceApi.Api.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -114,7 +114,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -1,11 +1,11 @@
-using ECommerceApi.Api.Data;
-using ECommerceApi.Api.Dtos;
-using ECommerceApi.Api.Models;
-using ECommerceApi.Api.Services;
+using EcommerceApi.Api.Data;
+using EcommerceApi.Api.Dtos;
+using EcommerceApi.Api.Models;
+using EcommerceApi.Api.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ECommerceApi.Api.Controllers;
+namespace EcommerceApi.Api.Controllers;
 
 [ApiController]
 [Route("api/auth")]

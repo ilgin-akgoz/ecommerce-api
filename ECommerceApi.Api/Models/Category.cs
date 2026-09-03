@@ -1,6 +1,6 @@
 using System.Net.Http.Headers;
 
-namespace ECommerceApi.Api.Models;
+namespace EcommerceApi.Api.Models;
 
 public class Category
 {

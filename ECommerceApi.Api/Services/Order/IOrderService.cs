@@ -1,6 +1,6 @@
-using ECommerceApi.Api.Dtos;
+using EcommerceApi.Api.Dtos;
 
-namespace ECommerceApi.Api.Services;
+namespace EcommerceApi.Api.Services;
 
 public interface IOrderService
 {

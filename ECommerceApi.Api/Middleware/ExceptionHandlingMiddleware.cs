@@ -1,8 +1,8 @@
 using System.Net;
 using System.Text.Json;
-using ECommerceApi.Api.Exceptions;
+using EcommerceApi.Api.Exceptions;
 
-namespace ECommerceApi.Api.Middleware;
+namespace EcommerceApi.Api.Middleware;
 
 public class ExceptionHandlingMiddleware
 {

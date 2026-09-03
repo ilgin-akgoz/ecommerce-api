@@ -1,8 +1,8 @@
-using ECommerceApi.Api.Dtos;
-using ECommerceApi.Api.Services;
+using EcommerceApi.Api.Dtos;
+using EcommerceApi.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ECommerceApi.Api.Controllers;
+namespace EcommerceApi.Api.Controllers;
 
 [ApiController]
 [Route("api/customers")]

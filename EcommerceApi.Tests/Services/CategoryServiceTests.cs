@@ -1,10 +1,10 @@
 using AutoMapper;
-using ECommerceApi.Api.Data;
-using ECommerceApi.Api.Dtos;
-using ECommerceApi.Api.Exceptions;
-using ECommerceApi.Api.Mapping;
-using ECommerceApi.Api.Models;
-using ECommerceApi.Api.Services;
+using EcommerceApi.Api.Data;
+using EcommerceApi.Api.Dtos;
+using EcommerceApi.Api.Exceptions;
+using EcommerceApi.Api.Mapping;
+using EcommerceApi.Api.Models;
+using EcommerceApi.Api.Services;
 using FluentAssertions;
 using FluentAssertions.Execution;
 using Microsoft.EntityFrameworkCore;

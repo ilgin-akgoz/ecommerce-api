@@ -1,11 +1,11 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using ECommerceApi.Api.Models;
+using EcommerceApi.Api.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace ECommerceApi.Api.Services;
+namespace EcommerceApi.Api.Services;
 
 public class TokenService : ITokenService
 {
