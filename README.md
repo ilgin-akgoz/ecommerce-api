@@ -25,7 +25,7 @@ Order     1 ──── * OrderItem  * ──── 1  Product
 - ASP.NET Core Identity + JWT for authentication
 - AutoMapper (entity ↔ DTO mapping)
 - FluentValidation (request validation)
-- xUnit, Moq, FluentAssertions, EF Core InMemory/SQLite (testing)
+- xUnit, FluentAssertions, EF Core InMemory/SQLite (testing)
 - Docker + docker-compose (containerized API + database)
 - GitHub Actions (CI — build & test on every push/PR)
 
